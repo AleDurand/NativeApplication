@@ -1,3 +1,4 @@
 <resources>
     <string name="app_name">NativeApplication</string>
+    <string name="main_tv_text">Text view 1</string>
 </resources>
