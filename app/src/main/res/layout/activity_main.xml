@@ -11,21 +11,14 @@
     android:paddingTop="@dimen/activity_vertical_margin"
     tools:context="com.adurand.nativeapplication.MainActivity">
 
+    <fragment
+        android:name="com.adurand.nativeapplication.fragments.MagazineFragment"
+        android:layout_width="match_parent"
+        android:layout_height="match_parent"
+        tools:layout="@layout/magazine_view" />
 
-    <TextView
-        android:text="@string/main_tv_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/tv_text"
-        android:layout_alignParentTop="true"
-        android:layout_alignParentStart="true" />
 
-    <TextView
-        android:text="@string/main_tv_text"
-        android:layout_width="wrap_content"
-        android:layout_height="wrap_content"
-        android:id="@+id/textView"
-        android:layout_marginTop="10dp"
-        android:layout_below="@+id/tv_text"
-        android:layout_alignParentStart="true" />
+
+
+
 </RelativeLayout>
