@@ -1,9 +1,12 @@
-package com.adurand.nativeapplication.activities;
+package com.adurand.nativeapplication.fragments;
 
 import android.os.Bundle;
 import android.support.annotation.Nullable;
-import android.support.v7.app.AppCompatActivity;
+import android.support.v4.app.Fragment;
 import android.util.Log;
+import android.view.LayoutInflater;
+import android.view.View;
+import android.view.ViewGroup;
 import android.widget.ListView;
 
 import com.adurand.nativeapplication.R;
@@ -22,19 +25,22 @@ import retrofit2.Response;
  * Created by adurand on 31/01/17.
  */
 
-public class MagazineListActivity extends AppCompatActivity {
+public class MagazineListFragment extends Fragment {
 
+    private List<MagazineModel> magazines = new ArrayList<>();
     private MagazineAdapter adapter;
 
+    @Nullable
     @Override
-    protected void onCreate(@Nullable Bundle savedInstanceState) {
-        super.onCreate(savedInstanceState);
-        setContentView(R.layout.activity_magazine_list);
+    public View onCreateView(LayoutInflater inflater, @Nullable ViewGroup container, @Nullable Bundle savedInstanceState) {
+        View rootView = inflater.inflate(R.layout.fragment_magazine_list, container, false);
 
-        adapter = new MagazineAdapter(this, new ArrayList<MagazineModel>());
-        ListView listView = (ListView) findViewById(R.id.magazine_lists_list);
+        adapter = new MagazineAdapter(rootView.getContext(), this.magazines);
+        ListView listView = (ListView) rootView.findViewById(R.id.magazine_lists_list);
         listView.setAdapter(adapter);
         refresh();
+
+        return rootView;
     }
 
     private void refresh() {
@@ -42,7 +48,7 @@ public class MagazineListActivity extends AppCompatActivity {
         call.enqueue(new Callback<List<MagazineModel>>() {
             @Override
             public void onFailure(Call<List<MagazineModel>> call, Throwable t) {
-                Log.d(MagazineListActivity.class.getName(), "Error occured: " + t.getMessage());
+                Log.d(MagazineListFragment.class.getName(), "Error occured: " + t.getMessage());
             }
 
             @Override

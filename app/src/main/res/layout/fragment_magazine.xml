@@ -28,6 +28,7 @@
         android:layout_below="@+id/magazine_view_name"
         android:layout_toRightOf="@+id/magazine_view_image"
         android:paddingTop="5dp"
-        android:text="Descripcion" />
+        android:text="Descripcion"
+        android:textAppearance="@style/TextAppearance.AppCompat.Small" />
 
 </RelativeLayout>

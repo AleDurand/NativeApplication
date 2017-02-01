@@ -26,7 +26,7 @@ public class MagazineAdapter extends ArrayAdapter<MagazineModel> {
     }
 
     public MagazineAdapter(Context context, List<MagazineModel> magazines) {
-        super(context, R.layout.magazine_view, magazines);
+        super(context, R.layout.fragment_magazine, magazines);
     }
 
     @Override
@@ -36,7 +36,7 @@ public class MagazineAdapter extends ArrayAdapter<MagazineModel> {
         if (convertView == null) {
             viewHolder = new ViewHolder();
             LayoutInflater inflater = LayoutInflater.from(getContext());
-            convertView = inflater.inflate(R.layout.magazine_view, parent, false);
+            convertView = inflater.inflate(R.layout.fragment_magazine, parent, false);
             viewHolder.image = (ImageView) convertView.findViewById(R.id.magazine_view_image);
             viewHolder.name = (TextView) convertView.findViewById(R.id.magazine_view_name);
             viewHolder.description = (TextView) convertView.findViewById(R.id.magazine_view_description);
