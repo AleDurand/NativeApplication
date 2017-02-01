@@ -1,7 +1,6 @@
 package com.adurand.nativeapplication;
 
 import android.os.Bundle;
-import android.os.Handler;
 import android.support.annotation.NonNull;
 import android.support.design.widget.NavigationView;
 import android.support.v4.app.Fragment;
@@ -19,8 +18,6 @@ import com.adurand.nativeapplication.fragments.MagazineListFragment;
 
 public class MainActivity extends AppCompatActivity
         implements NavigationView.OnNavigationItemSelectedListener {
-
-    private Handler handler;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
